@@ -15,9 +15,12 @@ jobs:
       # - image: circleci/mysql:9.4
 
     working_directory: ~/repo
-
-    steps:
+  
+   steps:
       - checkout
+      - run: curl -sS https://getcomposer.org/installer | php -- --filename=composer
+      - run: ./composer install
+      - run: ./vendor/bin/phpunit
 
       # Download and cache dependencies
       - restore_cache:
