@@ -18,13 +18,13 @@ class AI
      */
     public static function getGender($text)
     {
-        if ((strpos($text, 'female') !== false) || (strpos($text, 'ผู้หญิง') !== false) || (strpos($text, 'ค่ะ') !== false)  
+        if ((strpos($text, 'female') !== false) || (strpos($text, 'ผู้หญิง') !== false) || (strpos($text, 'สวัสดีค่ะ') !== false)  
         || (strpos($text, 'จ้า') !== false) || (strpos($text, 'ค้า') !== false) ||(strpos($text,'ฉัน')!== false)) {
             return 'Female'; 
         }
 
         else if((strpos($text, 'male') !== false)|| (strpos($text, 'ผู้ชาย') !== false)|| (strpos($text, 'ครับ') !== false)
-        || (strpos($text, 'คับ') !== false)|| (strpos($text, 'คร้าบ') !== false)  ||(strpos($text,'เรา')!== false)  )
+        || (strpos($text, 'สวัสดีครัช') !== false)|| (strpos($text, 'ผม') !== false)  ||(strpos($text,'เรา')!== false)  )
         {
             return 'Male';
         }
@@ -40,7 +40,7 @@ class AI
     {
         if ((strpos($text, 'สนุก') !== false) ||(strpos($text,'ชอบ')!== false)||(strpos($text,'รัก')!== false)||(strpos($text,'love')!== false))
             return 'Positive';
-        else if ((strpos($text, 'เศร้า') !== false)||(strpos($text,'เกลียด')!== false)||(strpos($text,'แย่')!== false)
+        else if ((strpos($text, 'เศร้า') !== false)||(strpos($text,'เกลียด')!== false)||(strpos($text,'เบื่อ')!== false)
         ||(strpos($text,'ไม่สนุก')!== false))
             return 'Negative';
         else 
