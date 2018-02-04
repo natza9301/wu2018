@@ -77,7 +77,8 @@ class AI
             }else{
                 return ['TH'];
             }
-        }if(preg_replace('/[^a-z]/u','',$text)){
+        }
+        if(preg_replace('/[^a-z]/u','',$text)){
             if(preg_replace('/[^ก-๛]/u','',$text)){
                 return ['TH', 'EN'];
             }else{
