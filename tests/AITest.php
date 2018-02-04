@@ -66,19 +66,19 @@ final class AITest extends TestCase
     }
     public function testLanguages2(): void
     {
-        $result = AI::getLanguages('วู้');
+        $result = AI::getLanguages('ฮอ');
         $expected_result = ['TH'];
         $this->assertEquals($expected_result, $result);
     }
     public function testLanguages3(): void
     {
-        $result = AI::getLanguages('วู้ABC');
+        $result = AI::getLanguages('วนรABC');
         $expected_result = ['TH','EN'];
         $this->assertEquals($expected_result, $result);
     }
     public function testLanguages4(): void
     {
-        $result = AI::getLanguages('ABCวู้');
+        $result = AI::getLanguages('ABCวนรญ');
         $expected_result = ['TH','EN'];
         $this->assertEquals($expected_result, $result);
     }
