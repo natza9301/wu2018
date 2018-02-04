@@ -18,20 +18,6 @@ class AI
      */
     public static function getGender($text)
     {
-        if ((strpos($text, 'female') !== false) || (strpos($text, 'ผู้หญิง') !== false) || (strpos($text, 'สวัสดีค่ะ') !== false)  
-        || (strpos($text, 'จ้า') !== false) || (strpos($text, 'ค้า') !== false) ||(strpos($text,'ฉัน')!== false)) {
-            return 'Female'; 
-        }
-
-        else if((strpos($text, 'male') !== false)|| (strpos($text, 'ผู้ชาย') !== false)|| (strpos($text, 'ครับ') !== false)
-        || (strpos($text, 'สวัสดีครัช') !== false)|| (strpos($text, 'ผม') !== false)  ||(strpos($text,'เรา')!== false)  )
-        {
-            return 'Male';
-        }
-        else
-            return 'Unknown';
-        
-
             $male =['ครับ','ครัช','ผม'];
             $female =['ค่ะ','จ้า','ค้า'];
             
@@ -47,7 +33,7 @@ class AI
         
 
         return  'Unknown';
-
+    }
     /**
      * @return string 'Positive' or 'Neutral' or 'Negative'
      */
