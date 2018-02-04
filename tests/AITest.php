@@ -25,7 +25,7 @@ final class AITest extends TestCase
     public function testGender_Male3(): void
     {
         $result = AI::getGender('ผม');
-        $expected_result = 'Female';
+        $expected_result = 'Male';
         $this->assertEquals($expected_result, $result);
     }
     public function testGender_Female(): void
@@ -52,12 +52,6 @@ final class AITest extends TestCase
         $expected_result = 'Negative';
         $this->assertEquals($expected_result, $result);
     }
-    public function testrudeword(): void
-    {
-        $result = AI::getRudeWords('Fuck');
-        $expected_result = 'Neutral';
-        $this->assertEquals($expected_result, $result);
-    }
     public function testrudeword1(): void
     {
         $result = AI::getRudeWords('fuck');
@@ -67,13 +61,13 @@ final class AITest extends TestCase
     public function testrudeword2(): void
     {
         $result = AI::getLanguages('Fuck');
-        $expected_result = 'EN';
+        $expected_result = ['EN'];
         $this->assertEquals($expected_result, $result);
     }
     public function testrudeword3(): void
     {
         $result = AI::getLanguages('วู้');
-        $expected_result = 'TH';
+        $expected_result = ['TH'];
         $this->assertEquals($expected_result, $result);
     }
 
