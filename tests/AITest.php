@@ -22,7 +22,7 @@ final class AITest extends TestCase
         $expected_result = 'Female';
         $this->assertEquals($expected_result, $result);
     }
-    public function testGender_Male1(): void
+    public function testGender_Male3(): void
     {
         $result = AI::getGender('ผม');
         $expected_result = 'Female';
