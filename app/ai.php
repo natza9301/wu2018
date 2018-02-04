@@ -18,8 +18,8 @@ class AI
      */
     public static function getGender($text)
     {
-            $male =['ครับ','ครัช','ผม'];
-            $female =['ค่ะ','จ้า','ค้า'];
+            $male =['ครับ','ครัช','ผม','เรา','ผม'];
+            $female =['ค่ะ','จ้า','ฉัน'];
             
         for($i=0 ; $i < sizeof($male) ; $i++){
             if ((strpos($text, $male[$i]) !== false))
