@@ -72,24 +72,17 @@ class AI
     public static function getLanguages($text)
     {
         if(preg_replace('/[^ก-๛]/u','',$text)){
-            if(preg_replace('/[^a-z]/u','',$text)) {
-                return ['TH','EN'];
-            }
-            else{
+            if(preg_replace('/[^a-z]/u','',$text)){
+                return ['TH', 'EN'];
+            }else{
                 return ['TH'];
             }
-                
-        }
-
-        if(preg_replace('/[^a-z]/u','',$text)){
-            if(preg_replace('/[^ก-๛]/u','',$text)) {
-                return ['TH','EN'];
-            }
-            else
-            {
+        }if(preg_replace('/[^a-z]/u','',$text)){
+            if(preg_replace('/[^ก-๛]/u','',$text)){
+                return ['TH', 'EN'];
+            }else{
                 return ['EN'];
             }
-                
         }
     }
 }
