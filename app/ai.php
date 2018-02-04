@@ -75,14 +75,21 @@ class AI
             if(preg_replace('/[^a-z]/u','',$text)) {
                 return ['TH','EN'];
             }
-        return ['TH'];
+            else{
+                return ['TH'];
+            }
+                
         }
 
         if(preg_replace('/[^a-z]/u','',$text)){
             if(preg_replace('/[^ก-๛]/u','',$text)) {
                 return ['TH','EN'];
             }
-        return ['EN'];
+            else
+            {
+                return ['EN'];
+            }
+                
         }
     }
 }
