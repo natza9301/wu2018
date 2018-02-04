@@ -31,7 +31,22 @@ class AI
         else
             return 'Unknown';
         
-    }
+
+            $male =['ครับ','ครัช','ผม'];
+            $female =['ค่ะ','จ้า','ค้า'];
+            
+        for($i=0 ; $i < sizeof($male) ; $i++){
+            if ((strpos($text, $male[$i]) !== false))
+                return 'Male';
+        }
+
+        for($i=0 ; $i < sizeof($female) ; $i++){
+            if ((strpos($text, $female[$i]) !== false))
+                return 'Female';
+        }
+        
+
+        return  'Unknown';
 
     /**
      * @return string 'Positive' or 'Neutral' or 'Negative'
@@ -53,16 +68,14 @@ class AI
      */
     public static function getRudeWords($text)
     {
-        $rude= array();
-        if (strpos($text, 'fuck') !== false)
-            array_push($rude,'fuck');
-        if (strpos($text, 'bad') !== false)
-            array_push($rude,'bad');
-        if (strpos($text, ' ไอบ้า') !== false)
-            array_push($rude,'ไอบ้า');
-        if (strpos($text, 'ไอคนไม่ดี') !== false)
-            array_push($rude,'ไอคนไม่ดี');
-        return (sizeof($rude)==0)?['Polite']:$rude;
+        $rude =['แสส','ฟวย','ควE','fuck','บ้า','คนเลว','ชั่ว','สามาร','ไอห่า','ไอตัวลากไก่ไปกินในน้ำ','ไอคนไม่ดี'];
+        $returnRude = array();
+        for($i=0 ; $i < sizeof($rude) ; $i++){
+            if ((strpos($text, $rude[$i]) !== false))
+                array_push($returnRude,$rude[$i]);
+        }
+
+        return  (sizeof($returnRude)==0)?['พูดเพราะมาก']:$returnRude;
        
     }
 
@@ -86,4 +99,5 @@ class AI
             }
         }
     }
+    
 }
