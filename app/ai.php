@@ -39,13 +39,21 @@ class AI
      */
     public static function getSentiment($text)
     {
-        if ((strpos($text, 'สนุก') !== false) ||(strpos($text,'ชอบ')!== false)||(strpos($text,'รัก')!== false)||(strpos($text,'love')!== false))
-            return 'Positive';
-        else if ((strpos($text, 'เศร้า') !== false)||(strpos($text,'เกลียด')!== false)||(strpos($text,'เบื่อ')!== false)
-        ||(strpos($text,'ไม่สนุก')!== false))
-            return 'Negative';
-        else 
-            return 'Neutral';
+            $positive =['สนุก','ชอบ','รัก','love'];
+            $negative =['เศร้าง','เกลียด','เบื่อ'];
+            
+        for($i=0 ; $i < sizeof($positive) ; $i++){
+            if ((strpos($text, $positive[$i]) !== false))
+                return 'Positive';
+        }
+
+        for($i=0 ; $i < sizeof($negative) ; $i++){
+            if ((strpos($text, $negative[$i]) !== false))
+                return 'Negative';
+        }
+        
+
+        return 'Neutral';
 
     }
 
