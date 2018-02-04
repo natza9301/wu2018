@@ -46,13 +46,13 @@ final class AITest extends TestCase
         $expected_result = 'Positive';
         $this->assertEquals($expected_result, $result);
     }
-    public function testSentiment_positive(): void
+    public function testSentiment_positive1(): void
     {
         $result = AI::getSentiment('เบื่อ');
         $expected_result = 'Negative';
         $this->assertEquals($expected_result, $result);
     }
-    public function testSentiment_positive(): void
+    public function testSentiment_positive2(): void
     {
         $result = AI::getSentiment('เฉยๆ');
         $expected_result = 'Neutral';
@@ -64,19 +64,19 @@ final class AITest extends TestCase
         $expected_result = 'Neutral';
         $this->assertEquals($expected_result, $result);
     }
-    public function testrudeword()): void
+    public function testrudeword1()): void
     {
         $result = AI::getRudeWords('Fuck');
         $expected_result = 'Neutral';
         $this->assertEquals($expected_result, $result);
     }
-    public function testrudeword()): void
+    public function testrudeword2()): void
     {
         $result = AI::getLanguages('Fuck');
         $expected_result = 'EN';
         $this->assertEquals($expected_result, $result);
     }
-    public function testrudeword()): void
+    public function testrudeword3()): void
     {
         $result = AI::getLanguages('วู้');
         $expected_result = 'TH';
